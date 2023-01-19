@@ -1,4 +1,4 @@
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {StyleSheet} from 'react-native';
 
 import React from 'react';
 import Animated, {
@@ -8,15 +8,13 @@ import Animated, {
   useAnimatedReaction,
   runOnUI,
   withSpring,
-  scrollTo,
-  useDerivedValue,
   cancelAnimation,
 } from 'react-native-reanimated';
 import {Gesture, GestureDetector} from 'react-native-gesture-handler';
 import {Dimensions, StatusBar} from 'react-native';
 
-export const {height: wheight, width} = Dimensions.get('window');
-export const height = wheight - StatusBar.currentHeight;
+const {height: wheight, width} = Dimensions.get('window');
+const height = wheight - StatusBar.currentHeight;
 const DEFAULT_ANIMATION_CONFIG = {
   damping: 20,
   mass: 0.2,

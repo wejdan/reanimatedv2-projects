@@ -1,13 +1,11 @@
-import {View, Text, StyleSheet, ScrollView} from 'react-native';
+import {StyleSheet} from 'react-native';
 
-import React, {useRef} from 'react';
+import React from 'react';
 import Animated, {
   scrollTo,
   useAnimatedReaction,
   useAnimatedRef,
   useAnimatedScrollHandler,
-  useAnimatedStyle,
-  useDerivedValue,
   useSharedValue,
 } from 'react-native-reanimated';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
