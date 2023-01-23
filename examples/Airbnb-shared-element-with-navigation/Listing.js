@@ -51,28 +51,20 @@ const snapPoint = (number, points) => {
   return point[0];
 };
 const Listing = ({route, navigation}) => {
-  /* 2. Get the param */
   const scollRef = useRef(null);
 
   const {post} = route.params;
   const gesture = Gesture.Pan();
   const translateY = useSharedValue(0);
-  const offsetY = useSharedValue(0);
 
   const translateX = useSharedValue(0);
-  const offsetX = useSharedValue(0);
   const scale = useSharedValue(1);
   const borderRadius = useSharedValue(0);
   gesture.simultaneousWithExternalGesture(scollRef);
 
-  gesture.onBegin(() => {
-    offsetY.value = translateY.value;
-    offsetX.value = translateX.value;
-  });
-
   gesture.onUpdate(e => {
-    translateY.value = clamp(e.translationY + offsetY.value, 0, height);
-    translateX.value = e.translationX + offsetX.value;
+    translateY.value = clamp(e.translationY, 0, height);
+    translateX.value = e.translationX;
 
     scale.value = interpolate(
       translateY.value,
