@@ -4,12 +4,8 @@ import Animated from 'react-native-reanimated';
 import {Gesture, GestureDetector} from 'react-native-gesture-handler';
 import {Context} from '../Context';
 import {useNavigation} from '@react-navigation/native';
-import {runOnJS} from 'react-native-reanimated/lib/reanimated2/core';
 export const {height, width} = Dimensions.get('window');
 import {calculateMovs} from '../utils/movesCalculation';
-
-const color1 = '#fcfed5';
-const color2 = '#648840';
 
 export const SIZE = width / 8;
 export const WIDTH = width;

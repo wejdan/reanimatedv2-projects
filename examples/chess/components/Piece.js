@@ -10,29 +10,14 @@ import Animated, {
   withTiming,
   useDerivedValue,
   useAnimatedReaction,
-  useAnimatedProps,
-  interpolate,
 } from 'react-native-reanimated';
 import {Gesture, GestureDetector} from 'react-native-gesture-handler';
 import {calculateMovs} from '../utils/movesCalculation';
 import {runOnJS} from 'react-native-reanimated/lib/reanimated2/core';
-import {black, white} from '../utils/data';
 import {Context} from '../Context';
 const ONE_SECOND_IN_MS = 1000;
 
-const PATTERN = [
-  1 * ONE_SECOND_IN_MS,
-  2 * ONE_SECOND_IN_MS,
-  3 * ONE_SECOND_IN_MS,
-];
-const Piece = ({
-  img,
-
-  index,
-  name,
-
-  player,
-}) => {
+const Piece = ({img, index, player}) => {
   const {turn, board, rotate, active, setMovs} = useContext(Context);
   const navigation = useNavigation();
 
